@@ -4,6 +4,7 @@ public class PlayerShooting01 : MonoBehaviour
 {
     public GameObject bulletPrefabs;
     public float shootingInterval;
+    public Vector3 bulletOffset;
 
     private float lastBulletTime;
 
@@ -11,16 +12,21 @@ public class PlayerShooting01 : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            if (Time.time - lastBulletTime > shootingInterval)
-            {
-                ShootBullet();
-                lastBulletTime = Time.time;
-            }
+            UpdateFiring();
+        }
+    }
+
+    private void UpdateFiring()
+    {
+        if (Time.time - lastBulletTime > shootingInterval)
+        {
+            ShootBullet();
+            lastBulletTime = Time.time;
         }
     }
 
     private void ShootBullet()
     {
-        Instantiate(bulletPrefabs, transform.position, transform.rotation);
+        Instantiate(bulletPrefabs, transform.position + bulletOffset, transform.rotation);
     }
 }
