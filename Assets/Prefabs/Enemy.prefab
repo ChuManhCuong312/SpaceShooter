@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1219365018312466171}
   - component: {fileID: -6465115365607196537}
   - component: {fileID: -4482023274114029270}
+  - component: {fileID: 8320202509559017673}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -181,3 +182,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   explosionPrefab: {fileID: 2234284563290989951, guid: 32a7da3495574d24d8c079a6cca8a6d5,
     type: 3}
+  defaultHealthPoint: 3
+--- !u!114 &8320202509559017673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579123826856876364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ade010543e8cd4394cf6207a9e3ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  health: {fileID: -4482023274114029270}
+  damage: 1
